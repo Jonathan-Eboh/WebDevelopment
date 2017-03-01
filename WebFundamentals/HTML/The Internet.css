@@ -1,0 +1,21 @@
+body{
+    background-color: grey;
+    width: 970px;
+}
+
+.header{
+    display: block;
+    background-color: red;
+    width: 970px;
+    text-align: left;
+}
+
+.header img{
+    vertical-align: top;
+    width: 100px;
+
+}
+
+.header h1{
+    
+}

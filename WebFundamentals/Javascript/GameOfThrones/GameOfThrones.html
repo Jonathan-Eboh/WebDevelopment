@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Basic Page Needs
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8">
+    <title>GameOfThrones</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $("img").click(function () {
+            $.get("http://anapioficeandfire.com/api/houses/"+ $(this).attr("index"),function(res){
+                $("#houseBox").html("<h3>Name: </h3><p>"+res.name+"</p>"+"<h3>Region: </h3><p>"+res.region+"</p>"+"<h3>Coat Of Arms: </h3><p>"+res.coatOfArms+"</p>"+"<h3>Titles: </h3><p>"+res.titles+"</p>");
+
+                console.log(res);
+            },"json");
+
+        });
+    });
+
+
+    </script>
+
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css"> -->
+
+    <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+
+
+    <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+
+</head>
+<body>
+
+    <!-- Primary Page Layout
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <div class="container">
+
+        <div class="row">
+
+            <div id="baratheon" class="three columns game">
+                <img index="17" src="baratheon.png" alt="">
+            </div>
+            <div id="lannister"class="three columns game">
+                <img index="229" src="lannister.jpg" alt="">
+            </div>
+            <div id="stark" class="three columns game">
+                <img index="362" src="stark.jpg" alt="">
+            </div>
+            <div id="targaryen" class="three columns game">
+                <img index="378" src="targaryen.jpg" alt="">
+            </div>
+
+        </div>
+        <div class="row">
+            <div id="houseBox" class="twelve columns throne">
+
+            </div>
+        </div>
+
+
+    </div>
+    <!-- End Document
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

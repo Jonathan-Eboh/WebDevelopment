@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>full friends</title>
+  </head>
+  <body>
+    <form class="" action="/friends" method="post">
+      <input type="text" name="first_name" placeholder="First Nizame">
+      <input type="text" name="last_name" placeholder="Last Nizame">
+      <input type="text" name="email" placeholder="Email">
+      <input type="submit" name="add" value="addshit">
+    </form>
+
+    <p>{{ friends }}</p> <!--This friends pairs with the orange friends from the server.py doc-->
+    {% for friend in friends %}<!--This for loop that adds the new user entered-->
+        <ul>
+            <li>{{ friend['first_name'] }}</li>
+            <li>{{ friend['last_name'] }}</li>
+            <li>{{ friend['email'] }}</li>
+        </ul>
+        <form action="/friends/<friend_id>/edit" method="get">
+            <input type="submit" name="edit" value="Edit" >
+        </form>
+        <form action="/friends/<id>/delete" method="post">
+            <input type="submit" name="delete" value="Delete" >
+        </form>
+    {% endfor %}
+  </body>
+</html>

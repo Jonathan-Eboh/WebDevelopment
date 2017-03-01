@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'manyToMany/css/styles.css' %}"media="screen" charset="utf-8">
+        <title>Many_To_Many</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <form class="" action="{% url 'addUser' %}" method="POST">
+                {% csrf_token %}
+                <label for="">Name</label>
+                <input type="text" name="name" class="form-control input-lg">
+                <label for="">Interest</label>
+                <input type="text" name="interest" class="form-control input-lg">
+                <input type="submit" name="" value="Submit" class="btn btn-primary">
+            </form>
+            <button type="submit" name="button"><a href="{% url 'showResults' %}">View People</a></button>
+            <!-- only need a form if there is something to submit -->
+        </div>
+
+    </body>
+</html>

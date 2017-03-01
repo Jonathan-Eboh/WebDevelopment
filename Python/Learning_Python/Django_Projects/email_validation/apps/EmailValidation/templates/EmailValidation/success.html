@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'EmailValidation/css/styles.css' %}" media="screen" title="no title" charset="utf-8">
+        <title>Success</title>
+    </head>
+    <body>
+        {% for message in messages%}
+        <div class="successMessage">
+
+                <h1>{{ message }}</h1>
+
+        </div>
+        {% endfor %}
+
+        <!-- {{emails}} -->
+
+    <form class="container" action="index.html" method="post">
+
+
+
+
+        <table>
+                <thead>
+                    <th>Email</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+
+                </thead>
+                {% for user in emails %}
+                <tbody>
+                    <tr>
+
+
+                    <td><h4>{{user.user_email}}</h4>
+                    </td>
+
+                    <td>
+                        <h4>{{user.created_at}}</h4>
+                    </td>
+
+                    <td>
+
+                        <a href="/delete_confrimation/{{user.id}}">Remove</a>
+                    </td>
+
+                    </tr>
+
+                </tbody>
+                {% endfor %}
+                <form class="" action="/return_home" method="get">
+                    <input type="submit" class="btn btn-primary" value="Return">
+                </form>
+            </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>randomWordGenerator</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <h1>Please enter in random word (attempt # {{request.session.count}})</h1>
+        <h2>{{request.session.generate}}</h2>
+        <form class="finalForm" action='/random' method="GET">
+            <!-- csrf_token ensures that data being collected goes to the same sever as the form generated-->
+             {% csrf_token %}
+
+            <input type="submit" class="btn btn-primary" name="generate" value="Generate Word">
+            <input type="submit" class="btn btn-primary" name="generate" value="Reset">
+
+        </form>
+    </body>
+</html>

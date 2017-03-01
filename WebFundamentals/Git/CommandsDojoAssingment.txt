@@ -1,0 +1,7 @@
+Commands used: Dojo Assingment Repo
+1) navigated to git hub and created repository Dojo Assignments
+
+2) cd DojoAssignments, git init
+3) git status,git add ., git commit -m"commiting files in DojoAssignments"
+4) git remote add origin https://github.com/Ebohcalyps3/DojoAssingments, git push origin -u master
+5) touch readme.md, git status, git add readme.md, git commit -m"added read me"

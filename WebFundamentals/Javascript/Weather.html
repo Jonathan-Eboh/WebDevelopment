@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Weather</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('form').submit(function() {
+                // your code here (build up your url)
+                console.log("loading...");
+                var searchcity= $("input").val();
+                // http://api.openweathermap.org/data/2.5/forecast/city?id=524901&APPID={INSERTAPIKEY}
+
+                $.get("http://api.openweathermap.org/data/2.5/weather?q="+searchcity+"&&appid=5385e915e9f1d7ba880cc00cc185f9ca", function(res) {
+                    // your code here
+                    // console.log(res.name);
+                    $(".resultBox").html("<h1>"+res.name+"</h1><h3>Temperature: "+res.main.temp+"</h3>");
+                    return false;
+                }, 'json');
+                // don't forget to return false so the page doesn't refresh
+                return false;
+            });
+        });
+        </script>
+
+        <style media="screen">
+            .searchWeather{
+                border-radius: 5px;
+            }
+            .resultBox{
+                width:300px;
+                height: 100px;
+                border: 2px solid black;
+            }
+
+        </style>
+    </head>
+    <body>
+        <form class="searchForm" action="index.html" method="post">
+            <input type="search" name="searchbar" value="">
+
+
+            <input class="searchWeather"type="submit" name="searchWeather" value="Search Weather">
+        </form>
+
+
+        <div class="resultBox">
+
+
+
+
+        </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,224 @@
+.mainbody{
+    display: block;
+    height: 700px;
+    width: 970px;
+    background-color: blue;
+    position: relative;
+
+}
+
+.topbar{
+    /*display: inline-block;*/
+    /*height: 100px;*/
+    width: 970px;
+    background-color: red;
+    /*text-align: right;
+    vertical-align: top;*/
+
+}
+
+.topbar img {
+    display: inline-block;
+}
+
+.searchbarcontainer {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 350px;
+}
+
+.searchbarcontainer p{
+    margin-left: 45px;
+}
+/*.topbar p{
+    text-align: right;
+}*/
+
+/*.searchbarcontainer{
+    display: inline-block;
+    height: 100px;
+    width: 400px;
+    background-color: navy;
+    text-align: right;
+    vertical-align: top;
+}
+.imgcontainer{
+    display: inline-block;
+    height: 100px;
+    width: 200px;
+    background-color: black;
+    text-align: left;
+
+    vertical-align: top;
+
+}
+
+.img{
+    display: block;
+    height: 50px;
+    width: 200px;
+    background-color: gold;
+    text-align: left;
+
+    vertical-align: top;
+
+}
+
+.searchbarwrapper{
+    display:inline-block;
+    height: 50px;
+    width: 200px;
+    background-color: grey;
+
+}
+
+.searchbar{
+    display: inline-block;
+    height: 35px;
+    width: 75px;
+    background-color: white;
+
+}
+.gobutton{
+    display: inline-block;
+    height: 35px;
+    width: 30px;
+    background-color: lightblue;
+}*/
+.menuoptions{
+    display: block;
+    /*height: 70px;*/
+    width: 900px;
+    background-color: green;
+    margin: 0 auto; /* this centers the object*/
+    width: 80%;
+    border-radius: 15px;
+}
+
+.menuoptions li{
+    display: inline;
+    margin: 0 auto;
+    padding:0 50px
+}
+
+.bodyblock1{
+    display: inline-block;
+    height: 220px;
+    width: 970px;
+    background-color: yellow;
+}
+
+.bodyblock1_a{
+    display: inline-block;
+    height: 220px;
+    width: 200px;
+    background-color: aqua;
+    list-style: inside;
+}
+
+.bodyblock1_a li a{
+    color: green;
+    /*padding: 0 50px;*/
+    /*margin: 0 auto;*/
+}
+
+
+.bodyblock1_a li {
+    color: yellow; /*This is just the dots infront of the list*/
+    text-align: center;
+
+}
+
+
+
+.bodyblock1_b{
+    display: inline-block;
+    height: 220px;
+    width: 700px;
+    background-color: black;
+}
+
+.bodyblock1_b_textbox1{
+    display: block;
+    height: 80px;
+    width: 700px;
+    background-color: teal;
+}
+
+.bodyblock1_b_textbox1 p{
+    text-align: center;
+}
+.bodyblock1_b_textbox2{
+    display: block;
+    height: 140px;
+    width: 650px;
+    background-color: brown;
+    vertical-align: top;
+}
+
+.bodyblock1_b_textbox2{
+    list-style: inside;
+    /*margin: 0 auto;*/
+    text-align: center;
+}
+
+.bodyblock1_b_textbox2 li{
+    font-style: italic;
+    font-style: oblique;
+}
+
+
+.bodyblock2{
+    display: inline-block;
+    height: 220px;
+    width: 970px;
+    background-color: orange;
+}
+
+.bodyblock2_a{
+    display: inline-block;
+    height: 200px;
+    width: 400px;
+    background-color: pink;
+    border-top;
+    border-top-style: solid;
+    border-width: 10px;
+    border-color: violet;
+    margin-top: 10px;
+}
+
+.bodyblock2_b{
+    display: inline-block;
+    height: 200px;
+    width: 500px;
+    background-color: slateblue;
+    border-top;
+    border-top-style: solid;
+    border-width: 10px;
+    border-color: violet;
+    margin-top: 10px;
+}
+
+
+.footer{
+    display: block;
+    /*height: */
+    width: 970px;
+    background-color: purple;
+    position: absolute;
+    bottom: 0;
+}
+
+.footerlist{
+    margin: 0 auto;
+    width: 60%;
+}
+.footerlist li{
+    display: inline;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.footer p{
+    text-align: center;
+}

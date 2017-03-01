@@ -1,0 +1,23 @@
+.FirstName{
+    display: block;
+}
+
+.LastName{
+    display: block;
+}
+
+.textbox{
+    display: block;
+}
+
+.contactCard{
+    height:200px ;
+    width: 200px;
+    border: 2px solid black;
+}
+
+.contactAlt{
+    height:200px;
+    width: 200px;
+    border: 2px solid green;
+}

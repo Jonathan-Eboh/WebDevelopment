@@ -1,0 +1,23 @@
+.game{
+    width: 300px ;
+    height:400px ;
+    border: 2px solid black;
+}
+
+.description{
+    width:500px ;
+    height: 500px ;
+    border: 2px solid black;
+    margin:
+}
+
+.throne{
+    border: 2px solid black;
+    height: 350px;
+    margin: 10px;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
