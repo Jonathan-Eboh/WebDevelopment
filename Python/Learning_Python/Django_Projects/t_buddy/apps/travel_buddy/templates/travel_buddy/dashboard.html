@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% load staticfiles %}
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="{% static 'travel_buddy/css/styles.css' %}" media="screen">
+        <title>Travel Dashboard</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Hello, Jerry!</h1>
+            <a href="#">Logout</a>
+            <h2>Your Trip Schedules</h2>
+            <table class="table">
+                <thead>
+                    <th>Destination</th>
+                    <th>Travel Start Date</th>
+                    <th>Travel End Date</th>
+                    <th>Plan</th>
+                </thead>
+                <tbody>
+                    <td><a href="#"></a>Paris France</td>
+                    <td>May 26 2015</td>
+                    <td>May 30 2015</td>
+                    <td>Stroll at the Eiffel Tower</td>
+                </tbody>
+            </table>
+            <h2>Other User's Travel Plans</h2>
+            <table class="table">
+                <thead>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Travel Start Date</th>
+                    <th>Travel End Date</th>
+                    <th>Do You Want to Join?</th>
+                </thead>
+                <tbody>
+                    <td>Stephen King</td>
+                    <td><a href="#">Singapore</a></td>
+                    <td>July 10 2015</td>
+                    <td>July 26 2015</td>
+                    <td><a href="#">Join</a></td>
+                </tbody>
+            </table>
+            <a href="/create_plan">Add Travel Plan</a>
+        </div>
+    </body>
+</html>
