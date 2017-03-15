@@ -1,0 +1,16 @@
+use my_first_db
+
+db.createCollection("students")
+
+show collections
+
+db.students.insert({name: "Tiger Woods", home_state: 'California', lucky_number: 5, birthday: {month: 10, day: 15, year: 1977}})
+
+db.students.find().pretty()
+
+db.students.insert({name: "Tom Tomas", home_state: 'Texas', lucky_number: 10, birthday: {month: 6, day: 27, year: 1985}})
+
+
+db.students.insert({name: "Kat Williams", home_state: 'Georgia', lucky_number: 20, birthday: {month: 3, day: 21, year: 1970}})
+db.students.insert({name: "Terry Crews", home_state: 'Alabama', lucky_number: 11, birthday: {month: 7, day: 19, year: 1972}})
+db.students.insert({name: "Justin Beiber", home_state: 'Florida', lucky_number: 9, birthday: {month: 1, day: 14, year: 1992}})

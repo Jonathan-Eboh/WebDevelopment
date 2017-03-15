@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Submitted Information</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/static/styles.css">
+
+    </head>
+    <body>
+        <h1>SUBMITTED INFORMATION!!!</h1>
+
+        <!-- This next portion is important becuase this is where we actually display the information that was caught -->
+        <ul>
+            <li>Name: <strong><%= user_data.name %></strong></li>
+            <li>Dojo Location: <strong><%= user_data.dojo_location %></strong></li>
+            <li>Favorite Language: <strong><%= user_data.favorite_language %></strong></li>
+            <li>Comment: <strong><%= user_data.comment %></strong></li>
+        </ul>
+
+        <button type="button" name="button" class="btn btn-success"><a href="/"><h3>Back</h3></a></button>
+
+    </body>
+</html>
