@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Intro to Mongoose</title>
+    </head>
+    <body>
+        <h1>TALK MONGOOSE TO ME BABY!!!</h1>
+
+            <ul>
+                <% for(let mongoose in fetched_animals) {%>
+                   <li><%= fetched_animals[mongoose].name %></li>
+                   <li><%= fetched_animals[mongoose].weight %></li>
+                   <li><a href="/animals/<%= fetched_animals[mongoose]._id  %>">View Goose!</a></li>
+                   <li><form class="" action="/animals/<%= fetched_animals[mongoose]._id%>/destroy" method="post">
+                       <input type="submit" name="" value="Delete Mongoose!!!">
+                   </form></li>
+                   <hr>
+                <% } %>
+            </ul>
+
+
+
+    </body>
+</html>

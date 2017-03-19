@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Intro to Mongoose</title>
+    </head>
+    <body>
+        <h1>AINT NUTHIN BUTA GOOSE THANG BABY!!!</h1>
+
+
+        <% if(fetched_animals) {%>
+            <ul>
+
+                   <li><%= fetched_animals.name %></li>
+                   <li><%= fetched_animals.weight %></li>
+                   <li><a href="/animals/<%= fetched_animals._id  %>/edit">Edit Goose!</a></li>
+                   <hr>
+                   <!-- might not need the fetched_animals[mongoose] above. Might simply need fetched_animals.id since we only have one mongoose -->
+            </ul>
+            <%}%>
+            <!-- <form class="" action="/animal/" method="post">
+                <input type="submit" name="" value="Edit mongoose!">
+            </form> -->
+
+    </body>
+</html>
