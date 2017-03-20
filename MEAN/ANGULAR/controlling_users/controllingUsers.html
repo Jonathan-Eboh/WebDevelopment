@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+  <head>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+    <script type='text/javascript'>
+      var myAppModule = angular.module('myApp', []);
+      // the .controller() method adds a controller to the module
+      myAppModule.controller('usersController', function ($scope){
+          $scope.users = [
+            // {first_name: 'Mike', last_name : "Smith", fave_lang: "Ruby"}
+
+          ];
+          $scope.addUser = function (){
+            // add to the array
+            $scope.users.push($scope.newUser);
+            // clear the form values
+            $scope.newUser = {};
+        }
+
+        $scope.deleteUser = function (){
+          // add to the array
+          $scope.items.splice($index, 1);
+          // clear the form values
+          $scope.newUser = {};
+      }
+
+      });
+    </script>
+  </head>
+<body>
+  <div ng-controller='usersController'>
+    <ul>
+        <li ng-repeat="user in users">{{ user.first_name }}, {{ user.last_name }}, {{user.fave_lang}} <button type="button" name="button" ng-click ="deleteUser()">Delete User</button></li>
+    </ul>
+    <h3>Add a new user!</h3>
+    <form>
+        First Name: <input type='text' ng-model='newUser.first_name'>
+        Last Name: <input type='text' ng-model='newUser.last_name'>
+        Favorite Language: <input type='text' ng-model='newUser.fave_lang'>
+        <input type='submit' value='add new user' ng-click='addUser()'>
+    </form>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'app'>
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" href="page_styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+  <script type="text/javascript" src="angular_controller.js">
+
+  </script>
+</head>
+<body>
+
+    <div ng-controller = "myController" id = "myController">
+        <div class="left">
+
+
+      <form > <!-- Could put ng-submit ='addFood()' as a property of the form tag and it wil do that same thing when we use this we can either use the enter key or an actual input button1` -->
+          Favorite Food: <input type='text' ng-model='newFood'>
+          <input type='submit' value='Add Food' ng-click='addFood()'>
+      </form>
+
+
+
+      <div id ='model' ng-if = "newFood">
+        <span>
+          Currently Typing: {{newFood}}
+        </span>
+      </div>
+      </div>
+
+      <div class="right">
+          <h2><u>List of Favorite Foods</u></h2>
+          <input type="text" name="" placeholder="Filter" ng-model="foodFilter">
+          <div ng-repeat ="food in foodlist | filter:foodFilter track by $index">
+                <p>{{food}}</p>
+          </div>
+      </div>
+
+
+    </div>
+</body>
+</html>
