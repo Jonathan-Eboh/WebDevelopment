@@ -7,14 +7,34 @@
     <body>
         <h1>O-OH BOY R-RI-RICK I SURE DO LOVE MESSAGES!!!</h1>
 
-        <form class="" action="index.html" method="post">
+        <form class="" action="/message" method="post">
             Name:<br><input type="text" name="name" value="" placeholder="Please enter in your name"><br>
             Message:<br><textarea name="message" rows="8" cols="80" placeholder="Please enter in your message"></textarea>
             <br><input type="submit" name="" value="Post Message">
         </form>
 
-        <h1><strong>Name: Posters Name</strong></h1>
-        <h1><strong>Message: Posters Message Message Message Message!</strong></h1>
+        <div class="">
+            <% for (message in fetched_messages) { %>
+                    <div class="">
+                        <h3>Name: <%= fetched_messages[message].name %></h3>
+                        <h3>Comment: <%= fetched_messages[message].message  %></h3>
+
+                        <% for (each_comment of fetched_messages[message]._comments) { %>
+						<h5><%="Name: " + each_comment.name %></h5>
+						<h5><%="Comment: " + each_comment.comments %></h5>
+					<% } %>
+
+
+                        <form class="" action="/comment/<%=fetched_messages[message]._id %>" method="post">
+                            <p class="margin">Name: </p><input class="comment_input" type="text" name="inputName">
+                            <p class="margin">Comment: </p><textarea class="comment_text"name="inputComment"></textarea>
+                            <input class="post2" type="submit" value="Post comment">
+
+                        </form>
+
+                    </div>
+            <% } %>
+        </div>
 
     </body>
 </html>

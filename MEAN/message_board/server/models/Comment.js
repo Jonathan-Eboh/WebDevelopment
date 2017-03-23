@@ -13,8 +13,12 @@ let Schema = mongoose.Schema;//Needs to know of the schema
 
 
 let CommentSchema = new mongoose.Schema({
- _post: {type: Schema.Types.ObjectId, ref: 'Post'},
- text: {type: String, required: true }
-}, {timestamp: true });
+ name: {type: String},
+ comments: {type: String},
+ _post: {type: Schema.Types.ObjectId, ref: 'Post'}, //underscore because post is a different table
+
+}, {timestamp: {createdAt: 'created_at', updatedAt: 'updated_at'} });
+CommentSchema.path('name').required(true, 'Name cannot be blank');
+CommentSchema.path('comments').required(true, 'Comment cannot be blank');
 // set our models by passing them their respective Schemas
 mongoose.model('Comment', CommentSchema);

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html ng-app='myApp'>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js'></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <style type="text/css">
+            .form-container{
+                margin: 50px 200px 50px 50px;
+            }
+            /* Fix alignment issue of label on extra small devices in Bootstrap 3.2 */
+            .form-horizontal .control-label{
+                padding-top: 7px;
+            }
+        </style>
+
+<script type="text/javascript" src="productsFactory.js"></script>
+<script type="text/javascript" src="productsController.js"></script>
+<script type="text/javascript" src="ordersController.js"></script>
+
+
+
+    </head>
+    <body>
+    <div ng-controller="productController">
+        <fieldset>
+            <legend>Products Controller</legend>
+            <div class="form-container">
+
+            <form class="form-horizontal" ng-submit="create()">
+                <div class="form-group">
+                    <label for="first-name" class="control-label col-xs-2">Product Name:</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" id="product-name" placeholder="Product Name" ng-model='product.name'>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="last-name" class="control-label col-xs-2">Product Price:</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control" id="product-price" placeholder="Product Price" ng-model='product.price'>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-xs-offset-11 col-xs-8">
+                        <button type="submit" class="btn btn-primary">Add a Product</button>
+                    </div>
+                </div>
+                </form>
+
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Actions</th>
+
+                    </tr>
+                  </thead>
+                  <tbody ng-repeat="product in products | orderBy: 'price' track by $index">
+                    <tr >
+                      <td>{{ product.name }}</td>
+                      <td> {{ product.price | currency: "USD $"}}</td>
+                      <td><button type="button" name="button" ng-click='delete($index)'>Delete Product</button></td>
+
+                    </tr>
+                  </tbody>
+                </table>
+
+
+            </div>
+    <div ng-controller='ordersController'>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="product in products | orderBy: 'price' track by $index ">
+                <tr>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price | currency:"USD $"}}</td>
+                    <td> {{product.quantity}} </td>
+                    <td>
+                        <button ng-click="update($index)">Buy Product</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</body>
+</html>

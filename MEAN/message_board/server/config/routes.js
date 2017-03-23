@@ -12,4 +12,7 @@ module.exports = function (app) {
     //root route
     app.get('/', postsController.getAllMessagesWithComments); //This renders our landing page
 
+    app.post('/message', postsController.postMessage); //This routes to where we process the message added by the user and subsequently route them back to the landing page
+
+    app.post('/comment/:id', commentsController.createComment);//This is the route by which we create one comment with the parent post id
 }

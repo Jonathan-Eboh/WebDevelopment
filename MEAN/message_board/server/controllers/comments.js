@@ -5,29 +5,34 @@
 // The controller sends the response to the client.
 // There can be many controllers in the server/controllers folder.
 
-// const mongoose = require('mongoose');
-//
-// let Post = mongoose.model('Post');
-// let Comment = mongoose.model('Comment');
-// // route for getting all posts and comments
-// app.get('/posts/:id', function (req, res){
-//  Post.findOne({_id: req.params.id})
-//  .populate('comments')
-//  .exec(function(err, post) {
-//       res.render('post', {post: post});
-//         });
-// });
-// // route for creating one comment with the parent post id
-// app.post('/posts/:id', function (req, res){
-//   Post.findOne({_id: req.params.id}, function(err, post){
-//          let comment = new Comment(req.body);
-//          comment._post = post._id;
-//          post.comments.push(comment);
-//          comment.save(function(err){
-//                  post.save(function(err){
-//                        if(err) { console.log('Error'); }
-//                        else { res.redirect('/'); }
-//                  });
-//          });
-//    });
-//  });
+const mongoose = require('mongoose');
+let Post = mongoose.model('Post');
+let Comment = mongoose.model('Comment');
+
+module.exports = {
+    //This first method gets us everything
+    createComment : function (req, res) {
+    let post_id = Post.find({}, false, true) //Need the specific id associated with the post we are dealing with
+    Post.findOne({}, function (err, posted_message) { //Whenever we make calls to the database we use err and name the return
+        if(err){
+            console.log("Sorry unable to comment on message");
+        }
+        let newComment = new Comment({name: req.body.inputName, comments: req.body.inputComment});
+        newComment._post = posted_message._id; //Is this where we link the newly made comment and the id of the message it is attached to?
+        console.log("Successfully commented on message!");
+        Post.update({_id: posted_message._id}, {$push: {"_comments": newComment}}, function(err){
+
+        });
+        //new comment goes here
+        newComment.save(function(err){
+            if(err){
+              console.log(err); //If it fails...
+              res.render('index.ejs', {errors: newComment.errors}); //...render the same page and show the errors
+          } else { //Else just redirect towards the landing page
+              console.log("comment added");
+              res.redirect("/");
+            }
+          });
+        });
+    }
+}
