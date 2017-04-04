@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="app"><!-- need this in the head for angular to work-->
+    <head>
+        <meta charset="utf-8">
+        <title>Belt</title>
+    <script src="angular/angular.js" charset="utf-8"></script>
+    <script src="angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="assets/app.js" charset="utf-8"></script>
+    <script src="assets/controllers/usersController.js" charset="utf-8"></script>
+    <script src="assets/factories/userFactory.js" charset="utf-8"></script>
+    <script src="assets/controllers/dashboardController.js" charset="utf-8"></script>
+    <script src="assets/controllers/questionsController.js" charset="utf-8"></script>
+    <script src="assets/factories/questionFactory.js" charset="utf-8"></script>
+    <script src="assets/controllers/singleQuestionController.js" charset="utf-8"></script>
+    <script src="assets/controllers/answersController.js" charset="utf-8"></script>
+    <script src="assets/factories/answerFactory.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div ng-view><!-- Partials will be rendered here --></div>
+    </body>
+</html>

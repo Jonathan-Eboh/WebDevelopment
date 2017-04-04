@@ -1,0 +1,26 @@
+<h1>Welcome, {{current_user.name}}!</h1>
+
+<a href="#!/ask">Add a Question</a>
+<a href="#/logout">Logout</a>
+<br>
+<label>Search:</label>
+<input type="text" ng-model="filter" placeholder="Enter a search">
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Question</th>
+            <th>Answer</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>A question?</td>
+            <td>2</td>
+            <td><a href="#!/question/:id">show</a></td>
+            <td><a href="#!/question/:id/new_answer">Answer</a></td>
+        </tr>
+    </tbody>
+</table>
+</table>

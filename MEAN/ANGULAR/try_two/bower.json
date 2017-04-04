@@ -1,0 +1,17 @@
+{
+  "name": "try_two",
+  "homepage": "https://github.com/Jonathan-Eboh/WebDevelopment",
+  "authors": [
+    "Jonathan-Eboh <eboh1923@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

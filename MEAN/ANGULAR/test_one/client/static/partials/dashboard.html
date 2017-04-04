@@ -1,0 +1,26 @@
+<div ng-controller ="questionsController">
+    <h1>Welcome {{user.name}}!</h1>
+<div class="">
+    <label for="searchBar">Search:</label>
+    <input type="text" placeholder="Enter Search">
+</div>
+<div class="">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Question</th>
+                <th>Answer</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A question?</td>
+                <td>2</td>
+                <td><a href="#!/question/:id">show</a></td>
+                <td><a href="#!/question/:id/new_answer">Answer</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
