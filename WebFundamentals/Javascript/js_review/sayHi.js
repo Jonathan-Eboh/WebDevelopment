@@ -14,3 +14,4 @@ function sayHi(name) {
 
 console.log(sayHi("Jon"));
 console.log(sayHi("Eboh"));
+console.log(sayHi("Test"));
